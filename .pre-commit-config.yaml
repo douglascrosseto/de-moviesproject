@@ -1,0 +1,22 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: requirements
+        name: requirements
+        entry: bash -c 'venv-moviesproject/Scripts/pip freeze > requirements.txt'
+        language: system
+        pass_filenames: false
+        stages: [commit]
+
+    repo: local
+    hooks:
+    -   id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args: [
+          "-rn", # Only display messages
+          "-sn", # Don't display the score
+          "--load-plugins=pylint.extensions.docparams" # Load the docparams plugin
+        ]
