@@ -3,7 +3,7 @@ repos:
     hooks:
     -   id: requirements
         name: requirements
-        entry: bash -c 'venv-moviesproject/Scripts/pip freeze > requirements.txt'
+        entry: bash -c '.\venv-moviesproject\Scripts\pip freeze > requirements.txt'
         language: system
         pass_filenames: false
         stages: [commit]
