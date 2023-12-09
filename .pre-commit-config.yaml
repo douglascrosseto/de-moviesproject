@@ -1,3 +1,4 @@
+#!/bin/bash
 repos:
 -   repo: local
     hooks:
