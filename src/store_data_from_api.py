@@ -10,7 +10,7 @@ load_dotenv()
 
 storage_account_name = os.getenv("STORAGE_ACCOUNT_NAME")
 storage_account_key = os.getenv("STORAGE_ACCOUNT_KEY")
-storage_bucket = "raw"
+storage_bucket = "raw/moviesproject"
 rapidapi_key = os.getenv("AUTH_RAPIDAPI_KEY")
 
 extractor = Extractor(
