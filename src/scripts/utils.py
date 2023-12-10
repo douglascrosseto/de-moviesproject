@@ -19,11 +19,7 @@ def initialize_azure_blob_storage(account_name, account_key):
     """
     try:
         # Initialize an Azure Blob Storage client
-        connection_string = f"""DefaultEndpointsProtocol=https;
-                                AccountName={account_name};
-                                AccountKey={account_key};
-                                EndpointSuffix=core.windows.net
-                            """
+        connection_string = f"""DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={account_key};EndpointSuffix=core.windows.net"""
         client = BlobServiceClient.from_connection_string(connection_string)
         return client
     except AzureError as e:
