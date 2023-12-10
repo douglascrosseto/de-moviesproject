@@ -8,8 +8,6 @@ repos:
         pass_filenames: false
         stages: [commit]
 
-    repo: local
-    hooks:
     -   id: pylint
         name: pylint
         entry: pylint
