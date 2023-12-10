@@ -4,8 +4,8 @@ Extractor module for the ETL pipeline.
 
 from datetime import datetime
 import requests
-from utils import initialize_azure_blob_storage, upload_file_to_azure
 from pytz import timezone
+from .utils import initialize_azure_blob_storage, upload_file_to_azure
 
 class Extractor:
     """
@@ -73,9 +73,9 @@ class Extractor:
 
             #call upload_file_to_azure function passing client
             if upload_file_to_azure(client, data, object_path, self.storage_bucket):
-                print(f"File '{object_path}' uploaded to Minio successfully.")
+                print(f"File '{object_path}' uploaded to storage successfully.")
             else:
-                print(f"Failed to upload '{object_path}' to Minio.")
+                print(f"Failed to upload '{object_path}' to storage.")
 
             next_page = data.get("next")
 
