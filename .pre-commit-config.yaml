@@ -1,9 +1,10 @@
+#!/bin/bash
 repos:
 -   repo: local
     hooks:
     -   id: requirements
         name: requirements
-        entry: echo '.\venv-moviesproject\Scripts\pip freeze > requirements.txt'
+        entry: cmd /c echo .\venv-moviesproject\Scripts\pip freeze >> requirements.txt
         language: system
         pass_filenames: false
         stages: [commit]
