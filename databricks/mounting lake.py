@@ -32,3 +32,8 @@ dbutils.fs.mount(
     mount_point = '/mnt/gold',
     extra_configs = {'fs.azure.account.key.adlsmovieseastus2.blob.core.windows.net' : dbutils.secrets.get('adb-secret-scope', 'adlsmovieseastus2-secret-access-key')}
 )
+
+# COMMAND ----------
+
+# DBTITLE 1,Testing if the mounting has worked
+dbutils.fs.ls('/mnt/raw/moviesproject/titles/')
